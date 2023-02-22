@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="Javascript/jQuery.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style media="screen">
+  h1{
+      position:absolute;
+      margin-top:10px;
+  }
+    </style>
+</head>
+<body>
+    <h1 style="color: white; ">To Do List</h1>
+    <div class="container">
+        <input type="text" placeholder="Write..." id="myInput">
+        <button id="add" style="background: rgb(54, 59, 59); color: white; width: 70px; height: 30px;font-family: Verdana, Geneva, Tahoma, sans-serif; font-size:18px; border-radius: 6px;">Add</button>
+        <div>
+            <ul type="none">
+                
+            </ul>
+        </div>
+    </div>
+<script>
+$(function(){
+
+    $('#myInput').change(function(){
+        var input = $(this).val();
+        $('ul').append('<li>'+ input +' <button id="del" style="color:red;" > Del </button> <button id="dn" style="color:green;"> Done </button> </li>');
+        $(this).val('');
+    });
+
+    $('ul').on('click','#del',function(){
+        $(this).parent('li').fadeOut(200)
+    });
+
+    $('ul').on('click','#dn',function(){
+        $(this).parent('li').css("text-decoration","line-through");
+        $(this).parent('li').css("background","lightgreen");
+        $(this).parent('li').css("font-style","italic");
+    });
+
+});
+
+
+</script>
+
+</body>
+</html>
