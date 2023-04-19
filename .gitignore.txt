@@ -1,5 +1,0 @@
-# Hidding files from Public view on git.
-
-side.html
-version2.html
-.gitignore.txt
